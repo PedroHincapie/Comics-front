@@ -43,10 +43,6 @@ export class ExtendedTableComponent implements OnInit {
   public productos: Producto[];
   public productoAdicionar: Producto;
 
-  producto2: {
-      codigo: ''
-  }
-
   constructor(
     private formBuilder: FormBuilder,
     private servicioProducto: ProductoService
@@ -163,7 +159,6 @@ export class ExtendedTableComponent implements OnInit {
     this.crear = false;
     this.servicioProducto.consultaProducto(producto.codigo).subscribe(resp => {
       this.productoAdicionar = resp;
-      this.codigo = this.productoAdicionar.codigo;
     });
   }
 
